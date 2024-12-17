@@ -57,8 +57,9 @@ app.post("/airdrop", async (req, res) => {
         }
 
         return res.status(200).json({ 
-            success : `Successfully airdropped ${amount} SOL.`,
-            signature
+            success : `Successfully airdropped ${amount} SOL to ${address}`,
+            signature,
+            explorerLink: `https://explorer.solana.com/tx/${signature}?cluster=${network}`
         });
 
     } catch (error) {
